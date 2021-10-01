@@ -5,7 +5,6 @@ EXPOSE 22
 RUN set -eux \
  && apt-get update -y && apt-get dist-upgrade -y \
  && apt-get install -y --no-install-recommends ssh sudo libffi-dev systemd openssh-client curl \
- && apt-get -y install puppet \
  && useradd --create-home -s /bin/bash vagrant \
  && echo -n 'vagrant:vagrant' | chpasswd \
  && echo 'vagrant ALL = NOPASSWD: ALL' > /etc/sudoers.d/vagrant \
